@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+    <header class="header-iletişim-sayfa">
+        
+ <img src="" alt="">           
+<span>Çetinkaya Mimarlık Sitesine Hoşgeldiniz</span>
+            
+   <a class="btn" href="Mimarlık Sitesi Anasayfa.html">Ana Sayfa</a>
+    <a class="btn" href="Projeler.html">Projeler</a>
+    <a class="btn" href="teknik çizimler.html">Teknik Çizimler</a>
+     <a class="btn" href="3D.html">3D Modelleme</a>             
+    </header>
+
+<body class="body-iletişim">
+    <main class="iletisim-container">
+        <h1>İletişim Formu</h1>
+        <p class="form-description">Bize ulaşmak için aşağıdaki formu doldurunuz. En kısa sürede size geri dönüş yapacağız.</p>
+        
+        <form class="contact-form" id="whatsappForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="ad">Adınız:</label>
+                <input type="text" id="ad" name="ad" placeholder="Örn: Yakup" required>
+            </div>
+
+            <div class="form-group">
+                <label for="soyad">Soyadınız:</label>
+                <input type="text" id="soyad" name="soyad" placeholder="Örn: Çetinkaya" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Adresi:</label>
+                <input type="email" id="email" name="email" placeholder="Örn: info@mimarlık.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefon">Telefon Numarası:</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="Örn: 0534 xxx xx xx" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="5" placeholder="Projenizle ilgili detayları buraya yazınız..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Gönder</button>
+        </form>
+    <script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var ad = document.getElementById('ad').value;
+        var soyad = document.getElementById('soyad').value;
+        var email = document.getElementById('email').value;
+        var telefon = document.getElementById('telefon').value;
+        var mesaj = document.getElementById('mesaj').value;
+        // WhatsApp numarasını buraya girin (ülke kodu ile birlikte, boşluksuz)
+        var whatsappNumara = '905345070390'; // Örnek: 905534123456
+        var text = `Ad: ${ad}%0ASoyad: ${soyad}%0AEmail: ${email}%0ATelefon: ${telefon}%0AMesaj: ${mesaj}`;
+        var url = `https://wa.me/${whatsappNumara}?text=${text}`;
+        window.open(url, '_blank');
+    });
+    </script>
+    </main>
+</body>
+</html>
